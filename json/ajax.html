@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="">
+			
+		</div>
+	</body>
+	<script src="js/3.4.1jquery.min.js.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$.ajax({
+				type:'GET',
+				url:'index.json',
+				dataType:"json",
+				success:function(date){
+					console.log(date)
+//					console.log(date.message[2].id)
+					for (var i=0;i<date.message.length;i++) {
+						var $p=$('<p></p>')
+						$('div').append($p)
+						$('p').eq(i).html(date.message[i].url)
+					}
+										
+				},
+				error:function(jqXHR){
+					console.log("Error: "+jqXHR.status);
+				}
+			})
+	</script>
+</html>

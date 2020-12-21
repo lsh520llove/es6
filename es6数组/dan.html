@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="js/3.4.1jquery.min.js.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		let p= new Promise(function(resolve, reject){
+			$.ajax({
+				type:"get",
+				url:"json2.json",
+				dateType:'json',
+				success: function (data) {
+		          resolve(data);
+		        },
+		        error: function (err) {
+		          reject(err);
+		        },
+			});
+		}).then(function(date){
+			alert(date.name);
+		},function(err){
+			console.error(err);
+		})
+	</script>
+</html>

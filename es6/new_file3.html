@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script>
+    	单个用法
+    let a = new Promise(function (resolve, reject) {
+      $.ajax({
+        url: "anime.json",
+        dataType: "json",
+        success: function (data) {
+          resolve(data);
+        },
+        error: function (err) {
+          reject(err);
+        },
+      });
+    }).then(
+      function (data) {
+        console.log('成功');
+      },
+      function (err) {
+        console.log(err.status);//输出404，意思文件不存在
+      }
+    );
+//////////////////////////////////////////////////////////////////
+//多个用法
+    function ajaxs(url) {
+      return new Promise(function (resolve, reject) {
+        $.ajax({
+          url: url,
+          dataType: "json",
+          success: function (data) {
+            resolve(data);
+          },
+          error: function (err) {
+            reject(err);
+          },
+        });
+      });
+    }
+    Promise.all([ajaxs("anime.json"), ajaxs("book.json")]).then(
+      function (arr) {
+        let [arr1, arr2] = arr;
+        alert("都成功了");
+        alert(arr1.title);
+        alert(arr2.title);
+      },
+      function () {
+        alert("至少有一个失败了");
+      }
+    );
+  </script>
+</html>

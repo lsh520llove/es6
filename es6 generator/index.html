@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<button onclick="btn()">点击</button>
+		<p>史上最强高中生</p>
+		<div>汪大东</div>
+	</body>
+	<script src="js/3.4.1jquery.min.js.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		function *show(){
+			alert(1);
+			yield '1';
+			alert(2)
+		}	
+		let f = show();
+		function btn(){
+			f.next();
+			f.next();
+		}
+	</script>
+</html>

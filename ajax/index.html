@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="">
+			<!--<p></p>-->
+		</div>
+	</body>
+	<script src="js/3.4.1jquery.min.js.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			var $p=$('<p></p>')
+			$('div').append($p)
+//			$.ajax({
+//				type:'GET',
+//				url:'https://api.apiopen.top/getJoke?page=1&count=2&type=video',
+//				url:'http://www.liulongbin.top:3005/api/getlunbo',
+//				dataType:"json",
+//				success:function(date){
+//					console.log(date)
+////					console.log(date.message[2].id)
+//					for (var i=0;i<date.result.length;i++) {
+//						var $p=$('<p></p>')
+//						$('div').append($p)
+//						$('p').eq(i).html(date.result[i].text)						
+//					}
+//										
+//				},
+//				error:function(jqXHR){
+//					console.log("Error: "+jqXHR.status);
+//				}
+//			})
+			$.ajax({
+				type:'GET',
+				
+				url:'http://www.liulongbin.top:3005/api/getlunbo',
+				dataType:"json",
+				success:function(date){
+					console.log(date)
+//					console.log(date.message[2].id)
+					for (var i=0;i<date.message.length;i++) {
+						var $p=$('<p></p>')
+						$('div').append($p)
+						$('p').eq(i).html(date.message[i].id)						
+					}
+										
+				},
+				error:function(jqXHR){
+					console.log("Error: "+jqXHR.status);
+				}
+			})
+			$.ajax({
+				type:'GET',
+				url:'http://www.liulongbin.top:3005/api/getlunbo',
+				dataType:"json",
+				success:function(date){
+					console.log(date)
+//					console.log(date.message[2].id)
+					for (var i=0;i<date.message.length;i++) {
+						var $p=$('<p></p>')
+						$('div').append($p)
+						$('p').eq(i).html(date.message[i].id)						
+					}
+										
+				},
+				error:function(jqXHR){
+					console.log("Error: "+jqXHR.status);
+				}
+			})
+		})
+	</script>
+</html>

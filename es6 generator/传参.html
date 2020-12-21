@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="js/3.4.1jquery.min.js.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+//		function *show(){
+//			let x = yield '2';
+//			console.log('one:'+ x);
+//			let y=yield '3';
+//			console.log('two:'+y);
+//			console.log('three:'+(x+y));
+//		}	
+//		let f = show();
+//		f.next();
+//		f.next(20);
+//		f.next(30);
+		function *show(){
+			alert('a');
+			let a=yield;
+			alert('b');
+			alert(a)
+		}	
+		let f = show();
+		console.log(f)
+		f.next(12);
+		f.next(13);
+	</script>
+</html>

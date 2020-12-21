@@ -1,0 +1,18 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul>li{
+	display: flex;
+}
+ul>li>img{
+	width: 40px;
+}
+ul>li>p{
+	width: 150px;
+	margin-left: 10px;
+}
+ul>li>button{
+	font-size: 16px;
+}
+

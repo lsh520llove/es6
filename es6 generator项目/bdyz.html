@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="" value="" />
+		<button>提交</button>
+		<p></p>
+	</body>
+	<script src="js/3.4.1jquery.min.js.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/runner.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		runner(function *(){
+			let date1=yield $.ajax({
+				type:"get",
+				url:"bdyz.json",
+				dataType: "json",
+				async:true
+			});
+			$('button').click(function(){
+				for (var i=0;i<date1.length;i++) {
+					if (date1[i].title.indexOf($('input').val())!=-1) {
+						$('p').append(date1[i].title+'</br>');
+					}
+				}
+				$('input').focus(function(){
+					$('p').html('')
+				})
+			})
+		})
+	</script>
+</html>

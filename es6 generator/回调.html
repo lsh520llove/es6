@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="js/3.4.1jquery.min.js.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/runner.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		runner(function *(){
+			let date1 = yield $.ajax({
+				type:'GET',
+				url:'json1.json',
+				dataType: "json",
+			});
+			let date2 = yield $.ajax({
+				type:'GET',
+				url:'json2.json',
+				dataType: "json",
+			});
+			document.write(date1.name+date1.agg+date1.text) 
+			document.write(date2.name+date2.agg+date2.text)
+			console.log(date1)
+			console.log(date2)
+		})
+		
+	</script>
+</html>
